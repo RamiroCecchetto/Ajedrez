@@ -4,12 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334131c3-08b2-4684-bfa3-94fec3318159" name="Changes" comment="Primer commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/Ajedrez.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/Casilla.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/Tablero.java" afterDir="false" />
+    <list default="true" id="334131c3-08b2-4684-bfa3-94fec3318159" name="Changes" comment="Aparece el tablero">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/dama/damaBlanca_casillaBlanca.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/dama/damaBlanca_casillaNegra.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/dama/damaNegra_casillaBlanca.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/dama/damaNegra_casillaNegra.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/peon/peonBlanco_casillaBlanca.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/peon/peonNegro_casillaBlanca.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/peon/peonNegro_casillaNegra.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/torre/torreBlanca_casillaBlanca.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/torre/torreBlanca_casillaNegra.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/torre/torreNegra_casillaBlanca.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/torre/torreNegra_casillaNegra.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/Casilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/Casilla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/Tablero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +35,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -32,19 +43,28 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2TUz8I1qonZygmvxTqdYFyrqAkI" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/ramic/OneDrive/Documents/Codigos/Ajedrez/src/main/resources",
     "settings.editor.selected.configurable": "editor.preferences.completion"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ramic\OneDrive\Documents\Codigos\Ajedrez\src\main\resources" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -82,11 +102,21 @@
       <option name="project" value="LOCAL" />
       <updated>1691112363531</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Aparece el tablero">
+      <option name="closed" value="true" />
+      <created>1691113562944</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691113562944</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Primer commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Primer commit" />
+    <MESSAGE value="Aparece el tablero" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aparece el tablero" />
   </component>
 </project>
