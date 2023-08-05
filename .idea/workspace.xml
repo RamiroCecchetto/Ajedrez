@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334131c3-08b2-4684-bfa3-94fec3318159" name="Changes" comment="Aparece el tablero">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/dama/damaBlanca_casillaBlanca.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/dama/damaBlanca_casillaNegra.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/dama/damaNegra_casillaBlanca.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/dama/damaNegra_casillaNegra.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/peon/peonBlanco_casillaBlanca.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/peon/peonNegro_casillaBlanca.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/peon/peonNegro_casillaNegra.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/torre/torreBlanca_casillaBlanca.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/torre/torreBlanca_casillaNegra.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/torre/torreNegra_casillaBlanca.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/piezas/torre/torreNegra_casillaNegra.png" afterDir="false" />
+    <list default="true" id="334131c3-08b2-4684-bfa3-94fec3318159" name="Changes" comment="Se agregaron las fotos de algunas piezas">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Peon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Pieza.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/Casilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/Casilla.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/Tablero.java" afterDir="false" />
@@ -34,8 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,6 +47,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/ramic/OneDrive/Documents/Codigos/Ajedrez/src/main/resources",
     "settings.editor.selected.configurable": "editor.preferences.completion"
@@ -110,13 +103,22 @@
       <option name="project" value="LOCAL" />
       <updated>1691113562944</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Se agregaron las fotos de algunas piezas">
+      <option name="closed" value="true" />
+      <created>1691116756454</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1691116756454</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Primer commit" />
     <MESSAGE value="Aparece el tablero" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aparece el tablero" />
+    <MESSAGE value="Se agregaron las fotos de algunas piezas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agregaron las fotos de algunas piezas" />
   </component>
 </project>

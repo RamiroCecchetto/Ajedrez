@@ -1,5 +1,7 @@
 package com.cecchetto;
 
+import com.cecchetto.piezas.Peon;
+
 import javax.swing.*;
 
 public class Ajedrez extends JFrame {
