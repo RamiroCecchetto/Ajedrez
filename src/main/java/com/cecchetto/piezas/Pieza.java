@@ -6,11 +6,10 @@ import java.util.ArrayList;
 
 public abstract class Pieza {
 
-    BufferedImage piezaBlancaFondoNegro, PiezaBlancaFondoBlanco, PiezaNegraFondoBlanco, piezNegraFondoNegro;
+    BufferedImage piezaBlancaFondoNegro, piezaBlancaFondoBlanco, PiezaNegraFondoBlanco, piezaNegraFondoNegro;
     protected Color color;
 
-    protected abstract ArrayList<Point> getPuntosPosibles();
+    public abstract ArrayList<Point> getPuntosPosibles();
 
-    public abstract void action();
 
 }

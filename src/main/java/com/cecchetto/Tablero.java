@@ -33,8 +33,4 @@ public class Tablero extends JPanel{
 
     }
 
-    public void addPieza(Pieza pieza) {
-
-    }
-
 }
