@@ -22,7 +22,7 @@ public class Rey extends Pieza{
     }
 
     @Override
-    public ArrayList<Point> getPuntosPosibles() {
+    public ArrayList<Point> getPuntosPosibles(Point punto) {
         return null;
     }
 }

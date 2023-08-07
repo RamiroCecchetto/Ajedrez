@@ -1,12 +1,12 @@
 package com.cecchetto;
 
 import com.cecchetto.piezas.*;
+
 import com.cecchetto.piezas.Color;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Tablero extends JPanel{
     static int width = 8, height = 8;
@@ -18,7 +18,7 @@ public class Tablero extends JPanel{
 
         for (int x=0 ; x<width ; x++) {
             for (int y=0 ; y<height ; y++) {
-                tablero[x][y] = new Casilla();
+                tablero[x][y] = new Casilla(new Point(x, y));
 
                 if ((x+y)%2 == 0)
                     tablero[x][y].setColor(Color.blanca);
@@ -27,6 +27,13 @@ public class Tablero extends JPanel{
 
                 this.add(tablero[x][y].getButton());
             }
+        }
+    }
+
+    public static void marcarPuntosPosibles(ArrayList<Point> puntos) {
+
+        for (Point punto : puntos) {
+            tablero[punto.x][punto.y].getButton().setBorder(BorderFactory.createLineBorder(java.awt.Color.YELLOW, 4));
         }
 
     }
@@ -53,6 +60,9 @@ public class Tablero extends JPanel{
         tablero[1][5].setPieza(new Peon(Color.negra));     tablero[0][5].setPieza(new Alfil(Color.negra));
         tablero[1][6].setPieza(new Peon(Color.negra));     tablero[0][6].setPieza(new Caballo(Color.negra));
         tablero[1][7].setPieza(new Peon(Color.negra));     tablero[0][7].setPieza(new Torre(Color.negra));
+
+        tablero[4][4].setPieza(new Torre(Color.blanca));
+
     }
 
 }

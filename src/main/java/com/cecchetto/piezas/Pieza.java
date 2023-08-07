@@ -11,7 +11,7 @@ public abstract class Pieza {
     protected BufferedImage piezaBlancaFondoNegro, piezaBlancaFondoBlanco, PiezaNegraFondoBlanco, piezaNegraFondoNegro;
     protected Color color;
 
-    public abstract ArrayList<Point> getPuntosPosibles();
+    public abstract ArrayList<Point> getPuntosPosibles(Point punto);
 
     public BufferedImage getFoto(Color color) {
         BufferedImage retu = null;

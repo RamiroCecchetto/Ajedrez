@@ -15,10 +15,20 @@ public class Casilla{
     Pieza pieza;
     Point punto;
 
-    public Casilla() {
+    public Casilla(Point punto) {
+        this.punto = punto;
         casilla = new JButton();
         casilla.setPreferredSize(new Dimension(55, 55));
         casilla.setBorder(BorderFactory.createLineBorder(java.awt.Color.BLACK));
+
+        casilla.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (pieza != null)
+                    Tablero.marcarPuntosPosibles(pieza.getPuntosPosibles(punto));
+            }
+        });
+
     }
 
     public void removePieza() {

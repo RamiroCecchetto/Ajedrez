@@ -20,7 +20,7 @@ public class Dama extends Pieza{
     }
 
     @Override
-    public ArrayList<Point> getPuntosPosibles() {
+    public ArrayList<Point> getPuntosPosibles(Point punto) {
         return null;
     }
 }
