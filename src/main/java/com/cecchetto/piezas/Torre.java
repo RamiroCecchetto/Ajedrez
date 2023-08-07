@@ -25,44 +25,24 @@ public class Torre extends Pieza{
     public ArrayList<Point> getPuntosPosibles(Point punto) {
         ArrayList<Point> puntos = new ArrayList<>();
 
-        for (int y = punto.y + 1; y < 8; y++) {
-            Point nextPoint = new Point(punto.x, y);
-            if (Tablero.isInRange(nextPoint) && !Tablero.tablero[nextPoint.x][nextPoint.y].isPieza()) {
-                puntos.add(nextPoint);
-            } else {
-                break;
-            }
-        }
+        int[][] movimientosTorre = {
+                {-1, 0}, {1, 0}, {0, -1}, {0, 1}
+        };
 
-        for (int y = punto.y - 1; y >= 0; y--) {
-            Point nextPoint = new Point(punto.x, y);
-            if (Tablero.isInRange(nextPoint) && !Tablero.tablero[nextPoint.x][nextPoint.y].isPieza()) {
-                puntos.add(nextPoint);
-            } else {
-                break;
-            }
-        }
+        for (int[] movimiento : movimientosTorre) {
+            int x = punto.x + movimiento[0];
+            int y = punto.y + movimiento[1];
 
-        for (int x = punto.x + 1; x < 8; x++) {
-            Point nextPoint = new Point(x, punto.y);
-            if (Tablero.isInRange(nextPoint) && !Tablero.tablero[nextPoint.x][nextPoint.y].isPieza()) {
-                puntos.add(nextPoint);
-            } else {
-                break;
-            }
-        }
-
-        for (int x = punto.x - 1; x >= 0; x--) {
-            Point nextPoint = new Point(x, punto.y);
-            if (Tablero.isInRange(nextPoint) && !Tablero.tablero[nextPoint.x][nextPoint.y].isPieza()) {
-                puntos.add(nextPoint);
-            } else {
-                break;
+            while (Tablero.isInRange(new Point(x, y)) && !Tablero.tablero[x][y].isPieza()) {
+                puntos.add(new Point(x, y));
+                x += movimiento[0];
+                y += movimiento[1];
             }
         }
 
         return puntos;
     }
+
 
 
 }
