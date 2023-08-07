@@ -1,5 +1,7 @@
 package com.cecchetto.piezas;
 
+import com.cecchetto.Ajedrez;
+import com.cecchetto.Tablero;
 import org.example.Util;
 
 import java.awt.*;
@@ -11,7 +13,7 @@ public class Peon extends Pieza{
 
         if (color == Color.blanca) {
             this.piezaBlancaFondoNegro = Util.getImage("piezas/peon/peonBlanco_casillaNegra.png");
-            this.piezaBlancaFondoBlanco = Util.getImage("piezas/peon/peonBlanco_casillaNegra.png");
+            this.piezaBlancaFondoBlanco = Util.getImage("piezas/peon/peonBlanco_casillaBlanca.png");
         }
         else {
             this.PiezaNegraFondoBlanco = Util.getImage("piezas/peon/peonNegro_casillaBlanca.png");
@@ -22,6 +24,9 @@ public class Peon extends Pieza{
 
     @Override
     public ArrayList<Point> getPuntosPosibles() {
+
+        
+
         return null;
     }
 

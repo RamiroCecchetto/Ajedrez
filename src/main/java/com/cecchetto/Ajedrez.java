@@ -10,7 +10,10 @@ public class Ajedrez extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
 
-        this.add(new Tablero());
+        Tablero tablero = new Tablero();
+        tablero.addPiezas();
+
+        this.add(tablero);
 
         this.pack();
         this.setLocationRelativeTo(null);

@@ -1,5 +1,7 @@
 package com.cecchetto.piezas;
 
+import com.cecchetto.Casilla;
+import com.cecchetto.Tablero;
 import org.example.Util;
 
 import java.awt.*;
@@ -21,6 +23,10 @@ public class Torre extends Pieza{
 
     @Override
     public ArrayList<Point> getPuntosPosibles() {
-        return null;
+        ArrayList<Point> puntos = new ArrayList<>();
+
+
+
+        return puntos;
     }
 }
