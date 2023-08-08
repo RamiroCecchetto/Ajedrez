@@ -1,6 +1,5 @@
 package com.cecchetto.piezas;
 
-import com.cecchetto.Casilla;
 import com.cecchetto.Tablero;
 
 import java.awt.*;
@@ -14,6 +13,7 @@ public abstract class Pieza {
     private int[][] movimientos;
 
     public abstract ArrayList<Point> getPuntosPosibles(Point punto);
+
     public Pieza(int[][] movimientos) {
         this.movimientos = movimientos;
     }
@@ -29,8 +29,18 @@ public abstract class Pieza {
             int x = punto.x + movimiento[0];
             int y = punto.y + movimiento[1];
 
-            while (Tablero.isInRange(new Point(x, y)) && !Tablero.tablero[x][y].isPieza()) {
-                puntos.add(new Point(x, y));
+            while (Tablero.isInRange(new Point(x, y))) {
+                if (!Tablero.tablero[x][y].isPieza()) {
+                    // Casilla vacía
+                    puntos.add(new Point(x, y));
+                } else if (Tablero.tablero[x][y].getPieza().getColor() != Tablero.tablero[punto.x][punto.y].getPieza().getColor()) {
+                    puntos.add(new Point(x, y));
+                    break;
+                } else {
+                    // La casilla tiene una pieza del mismo color, no se puede mover aquí
+                    break;
+                }
+
                 x += movimiento[0];
                 y += movimiento[1];
             }
@@ -38,6 +48,10 @@ public abstract class Pieza {
 
         return puntos;
     }
+
+
+
+
 
     public BufferedImage getFoto(Color color) {
         BufferedImage retu = null;

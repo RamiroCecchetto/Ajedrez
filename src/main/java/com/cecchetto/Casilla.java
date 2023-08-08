@@ -41,7 +41,7 @@ public class Casilla{
         casilla.setIcon(new ImageIcon(pieza.getFoto(color)));
     }
 
-    public Pieza getPiza() {
+    public Pieza getPieza() {
         return pieza;
     }
 
