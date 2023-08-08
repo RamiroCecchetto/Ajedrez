@@ -1,5 +1,6 @@
 package com.cecchetto.piezas;
 
+import com.cecchetto.Tablero;
 import org.example.Util;
 
 import java.awt.*;
@@ -23,6 +24,11 @@ public class Rey extends Pieza{
 
     @Override
     public ArrayList<Point> getPuntosPosibles(Point punto) {
-        return null;
+        ArrayList<Point> puntos = new ArrayList<>();
+
+
+
+        return puntos;
     }
+
 }

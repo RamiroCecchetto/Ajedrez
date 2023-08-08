@@ -5,6 +5,7 @@ import com.cecchetto.Tablero;
 import org.example.Util;
 
 import java.awt.*;
+import java.net.CookieHandler;
 import java.util.ArrayList;
 
 public class Peon extends Pieza{
@@ -24,10 +25,10 @@ public class Peon extends Pieza{
 
     @Override
     public ArrayList<Point> getPuntosPosibles(Point punto) {
+        ArrayList<Point> puntos = new ArrayList<>();
 
 
 
-        return null;
+        return puntos;
     }
-
 }

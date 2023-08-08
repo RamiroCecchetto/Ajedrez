@@ -25,20 +25,7 @@ public class Torre extends Pieza{
     public ArrayList<Point> getPuntosPosibles(Point punto) {
         ArrayList<Point> puntos = new ArrayList<>();
 
-        int[][] movimientosTorre = {
-                {-1, 0}, {1, 0}, {0, -1}, {0, 1}
-        };
 
-        for (int[] movimiento : movimientosTorre) {
-            int x = punto.x + movimiento[0];
-            int y = punto.y + movimiento[1];
-
-            while (Tablero.isInRange(new Point(x, y)) && !Tablero.tablero[x][y].isPieza()) {
-                puntos.add(new Point(x, y));
-                x += movimiento[0];
-                y += movimiento[1];
-            }
-        }
 
         return puntos;
     }
