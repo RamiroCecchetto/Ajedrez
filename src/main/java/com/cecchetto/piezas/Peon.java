@@ -9,7 +9,11 @@ import java.net.CookieHandler;
 import java.util.ArrayList;
 
 public class Peon extends Pieza{
+
+    private static final int[][] movimientosPeon = {  };
+
     public Peon(Color color) {
+        super(movimientosPeon);
         this.color = color;
 
         if (color == Color.blanca) {

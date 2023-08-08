@@ -4,12 +4,18 @@ import com.cecchetto.Casilla;
 import com.cecchetto.Tablero;
 import org.example.Util;
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
 public class Torre extends Pieza{
 
+    private static final int[][] movimientosTorre = {
+            {-1, 0}, {1, 0}, {0, -1}, {0, 1}
+    };
+
     public Torre(Color color) {
+        super(movimientosTorre);
         this.color = color;
 
         if (color == Color.blanca) {
@@ -21,15 +27,9 @@ public class Torre extends Pieza{
         }
     }
 
+
     @Override
     public ArrayList<Point> getPuntosPosibles(Point punto) {
-        ArrayList<Point> puntos = new ArrayList<>();
-
-
-
-        return puntos;
+        return mover(punto);
     }
-
-
-
 }

@@ -8,7 +8,10 @@ import java.util.ArrayList;
 
 public class Alfil extends Pieza{
 
+    private static final int[][] movimientosAlfil = {   };
+
     public Alfil(Color color) {
+        super(movimientosAlfil);
         this.color = color;
 
         if (color == Color.blanca) {

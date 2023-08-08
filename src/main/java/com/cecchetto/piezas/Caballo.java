@@ -10,7 +10,10 @@ import static com.cecchetto.Tablero.tablero;
 
 public class Caballo extends Pieza{
 
+    private static final int[][] movimientosCaballo = {  };
+
     public Caballo(Color color) {
+        super(movimientosCaballo);
         this.color = color;
 
         if (color == Color.blanca) {

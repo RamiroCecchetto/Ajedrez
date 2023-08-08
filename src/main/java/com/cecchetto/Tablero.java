@@ -31,19 +31,22 @@ public class Tablero extends JPanel{
     }
 
     public static void marcarPuntosPosibles(ArrayList<Point> puntos) {
+        if (puntos.isEmpty())
+            return;
+
+        Color colorPieza = tablero[puntos.get(0).x][puntos.get(0).y].getPiza().getColor();
 
         for (Point punto : puntos) {
-            if (!tablero[punto.x][punto.y].isPieza())
-                tablero[punto.x][punto.y].getButton().setBorder(BorderFactory.createLineBorder(java.awt.Color.YELLOW, 4));
-            else
-                tablero[punto.x][punto.y].getButton().setBorder(BorderFactory.createLineBorder(java.awt.Color.RED, 4));
+            tablero[punto.x][punto.y].getButton().setBorder(BorderFactory.createLineBorder(java.awt.Color.YELLOW, 4));
         }
 
     }
 
-    public static Boolean isInRange(Point punto) {
-        return ( (punto.x>0) && (punto.x<width) && (punto.y>0) && (punto.y<height) );
+    public static boolean isInRange(Point punto) {
+        return (punto.x >= 0) && (punto.x < width) && (punto.y >= 0) && (punto.y < height);
     }
+
+
 
     public void addPiezas() {
         tablero[6][0].setPieza(new Peon(Color.blanca));     tablero[7][0].setPieza(new Torre(Color.blanca));
@@ -66,6 +69,7 @@ public class Tablero extends JPanel{
 
         tablero[5][2].setPieza(new Torre(Color.blanca));
         tablero[4][2].setPieza(new Torre(Color.negra));
+        tablero[3][5].setPieza(new Torre(Color.blanca));
 
     }
 

@@ -8,7 +8,10 @@ import java.util.ArrayList;
 
 public class Reina extends Pieza{
 
+    private static final int[][] movimientosReina = {    };
+
     public Reina(Color color) {
+        super(movimientosReina);
         this.color = color;
 
         if (color == Color.blanca) {
