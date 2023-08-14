@@ -30,17 +30,41 @@ public class Tablero extends JPanel{
         }
     }
 
+    public static void moverPieza(Point llegada) {
+        Pieza piezaAux;
+
+        outerLoop:
+        for (int x=0 ; x<width ; x++) {
+            for (int y=0 ; y<height ; y++){
+                if (tablero[x][y].isPieza() && tablero[x][y].getPieza().isSeleccionada()) {
+                    piezaAux = tablero[x][y].getPieza();    //mover una pieza de una casilla a la otra
+                    tablero[x][y].removePieza();
+                    tablero[llegada.x][llegada.y].setPieza(piezaAux);
+                    piezaAux.setSeleccionada(false);
+                    break outerLoop;
+
+                }
+            }
+        }
+        limpiarTablero();
+        dibujado = false;
+    }
+
+    public static void limpiarTablero() {
+        for (int x=0 ; x<width ; x++)
+            for (int y=0 ; y<height ; y++)
+                tablero[x][y].limpiarCasilla();
+    }
+
     public static void marcarPuntosPosibles(ArrayList<Point> puntos) {
         if (puntos.isEmpty())
             return;
 
         for (Point punto : puntos)
             if (!tablero[punto.x][punto.y].isPieza())
-                tablero[punto.x][punto.y].getButton().setBorder(BorderFactory.createLineBorder(java.awt.Color.YELLOW, 4));
+                tablero[punto.x][punto.y].marcarCasilla();
             else
-                tablero[punto.x][punto.y].getButton().setBorder(BorderFactory.createLineBorder(java.awt.Color.RED, 4));
-
-
+                tablero[punto.x][punto.y].marcarCasilla();
     }
 
     public static boolean isInRange(Point punto) {

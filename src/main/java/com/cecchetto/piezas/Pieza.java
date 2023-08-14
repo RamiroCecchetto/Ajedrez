@@ -11,12 +11,14 @@ public abstract class Pieza {
     protected BufferedImage piezaBlancaFondoNegro, piezaBlancaFondoBlanco, PiezaNegraFondoBlanco, piezaNegraFondoNegro;
     protected Color color;
     private int[][] movimientos;
+    private Boolean seleccionada;
 
     public abstract ArrayList<Point> getPuntosPosibles(Point punto);
 
     public Pieza(int[][] movimientos) {
 
         this.movimientos = movimientos;
+        this.seleccionada = false;
     }
 
     public Color getColor() {
@@ -50,9 +52,13 @@ public abstract class Pieza {
         return puntos;
     }
 
+    public Boolean isSeleccionada() {
+        return seleccionada;
+    }
 
-
-
+    public void setSeleccionada(Boolean bool) {
+        this.seleccionada = bool;
+    }
 
     public BufferedImage getFoto(Color color) {
         BufferedImage retu = null;

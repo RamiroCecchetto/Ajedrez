@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334131c3-08b2-4684-bfa3-94fec3318159" name="Changes" comment="Las logicas de el caballo, el alfil y la torre andan bien">
+    <list default="true" id="334131c3-08b2-4684-bfa3-94fec3318159" name="Changes" comment="Todas las piezas tienen su logica correctamente">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/Casilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/Casilla.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/Tablero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Alfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Alfil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Caballo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Caballo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Peon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Peon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Pieza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Pieza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Reina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Reina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Rey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Rey.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691457151787</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Todas las piezas tienen su logica correctamente">
+      <option name="closed" value="true" />
+      <created>1692036390384</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1692036390384</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -176,6 +181,7 @@
     <MESSAGE value="Logica de la torre mejorada" />
     <MESSAGE value="Se sacaron las logicas porque no estaban del todo bien" />
     <MESSAGE value="Las logicas de el caballo, el alfil y la torre andan bien" />
-    <option name="LAST_COMMIT_MESSAGE" value="Las logicas de el caballo, el alfil y la torre andan bien" />
+    <MESSAGE value="Todas las piezas tienen su logica correctamente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Todas las piezas tienen su logica correctamente" />
   </component>
 </project>

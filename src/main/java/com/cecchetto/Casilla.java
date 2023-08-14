@@ -21,16 +21,33 @@ public class Casilla{
         casilla.setPreferredSize(new Dimension(55, 55));
         casilla.setBorder(BorderFactory.createLineBorder(java.awt.Color.BLACK));
 
-        casilla.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (pieza != null) {
-                    Tablero.marcarPuntosPosibles(pieza.getPuntosPosibles(punto));
-                    Tablero.dibujado = false;
-                }
-            }
-        });
+        casilla.addActionListener( e -> action());
+    }
 
+    private void action() {
+        if (Tablero.dibujado && pieza==null) {
+            Tablero.moverPieza(punto);
+//            Tablero.limpiarTablero();
+//            Tablero.dibujado = false;
+        }
+        else {
+            if (pieza != null) {
+                Tablero.marcarPuntosPosibles(pieza.getPuntosPosibles(punto));
+                pieza.setSeleccionada(true);
+                Tablero.dibujado = true;
+            }
+        }
+    }
+
+    public void limpiarCasilla() {
+        casilla.setBorder(BorderFactory.createLineBorder(java.awt.Color.BLACK));
+    }
+
+    public void marcarCasilla() {
+        if (pieza == null)
+            casilla.setBorder(BorderFactory.createLineBorder(java.awt.Color.YELLOW, 4));
+        else
+            casilla.setBorder(BorderFactory.createLineBorder(java.awt.Color.RED, 4));
     }
 
     public void removePieza() {
@@ -49,6 +66,7 @@ public class Casilla{
 
     public void setColor(com.cecchetto.piezas.Color color) {
         this.color = color;
+        casilla.setIcon(null);
 
         if (color == com.cecchetto.piezas.Color.blanca)
             casilla.setBackground(Color.WHITE);
@@ -57,7 +75,7 @@ public class Casilla{
     }
 
     public Boolean isPieza() {
-        return (pieza != null);
+        return (Tablero.isInRange(punto) && pieza != null);
     }
 
     public com.cecchetto.piezas.Color getColor() {
