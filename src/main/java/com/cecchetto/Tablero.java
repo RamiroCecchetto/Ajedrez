@@ -31,19 +31,18 @@ public class Tablero extends JPanel{
     }
 
     public static void moverPieza(Point llegada) {
-        Pieza piezaAux;
-
         outerLoop:
         for (int x=0 ; x<width ; x++) {
             for (int y=0 ; y<height ; y++){
+
                 if (tablero[x][y].isPieza() && tablero[x][y].getPieza().isSeleccionada()) {
-                    piezaAux = tablero[x][y].getPieza();    //mover una pieza de una casilla a la otra
+                    Pieza piezaAux = tablero[x][y].getPieza();    //mover una pieza de una casilla a la otra
                     tablero[x][y].removePieza();
                     tablero[llegada.x][llegada.y].setPieza(piezaAux);
                     piezaAux.setSeleccionada(false);
                     break outerLoop;
-
                 }
+
             }
         }
         limpiarTablero();
@@ -54,11 +53,14 @@ public class Tablero extends JPanel{
         for (int x=0 ; x<width ; x++)
             for (int y=0 ; y<height ; y++)
                 tablero[x][y].limpiarCasilla();
+        dibujado = false;
     }
 
     public static void marcarPuntosPosibles(ArrayList<Point> puntos) {
         if (puntos.isEmpty())
             return;
+
+        dibujado = true;
 
         for (Point punto : puntos)
             if (!tablero[punto.x][punto.y].isPieza())
@@ -71,7 +73,11 @@ public class Tablero extends JPanel{
         return (punto.x >= 0) && (punto.x < width) && (punto.y >= 0) && (punto.y < height);
     }
 
+    public static Boolean isDibujado() {
+        return dibujado;
+    }
 
+//    public  static void setDibujado()
 
     public void addPiezas() {
         tablero[6][0].setPieza(new Peon(Color.blanca));     tablero[7][0].setPieza(new Torre(Color.blanca));

@@ -14,6 +14,7 @@ public class Casilla{
     com.cecchetto.piezas.Color color;
     Pieza pieza;
     Point punto;
+    Boolean seleccionada = false;
 
     public Casilla(Point punto) {
         this.punto = punto;
@@ -25,16 +26,14 @@ public class Casilla{
     }
 
     private void action() {
-        if (Tablero.dibujado && pieza==null) {
+
+        if (Tablero.isDibujado() && pieza==null && seleccionada) {
             Tablero.moverPieza(punto);
-//            Tablero.limpiarTablero();
-//            Tablero.dibujado = false;
         }
         else {
             if (pieza != null) {
                 Tablero.marcarPuntosPosibles(pieza.getPuntosPosibles(punto));
                 pieza.setSeleccionada(true);
-                Tablero.dibujado = true;
             }
         }
     }
@@ -44,6 +43,8 @@ public class Casilla{
     }
 
     public void marcarCasilla() {
+        seleccionada = true;
+
         if (pieza == null)
             casilla.setBorder(BorderFactory.createLineBorder(java.awt.Color.YELLOW, 4));
         else
