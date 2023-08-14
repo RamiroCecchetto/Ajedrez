@@ -10,8 +10,6 @@ import static com.cecchetto.Tablero.tablero;
 
 public class Caballo extends Pieza{
 
-    private static final int[][] movimientosCaballo = {  };
-
     public Caballo(Color color) {
         super(movimientosCaballo);
         this.color = color;
@@ -26,12 +24,32 @@ public class Caballo extends Pieza{
 
     }
 
+    private static final int[][] movimientosCaballo = {
+            {-2, 1}, {-2, -1}, {-1, 2}, {-1, -2},
+            {1, 2}, {1, -2}, {2, 1}, {2, -1}
+    };
+
     @Override
     public ArrayList<Point> getPuntosPosibles(Point punto) {
         ArrayList<Point> puntos = new ArrayList<>();
+        puntos.add(punto);
 
+        for (int[] movimiento : movimientosCaballo) {
+            int x = punto.x + movimiento[0];
+            int y = punto.y + movimiento[1];
 
+            if (Tablero.isInRange(new Point(x, y))) {
+
+                if (!Tablero.tablero[x][y].isPieza())
+                    puntos.add(new Point(x, y));
+                else if (Tablero.tablero[x][y].getPieza().getColor() != Tablero.tablero[punto.x][punto.y].getPieza().getColor())
+                    puntos.add(new Point(x, y));
+
+            }
+        }
 
         return puntos;
+
+
     }
 }

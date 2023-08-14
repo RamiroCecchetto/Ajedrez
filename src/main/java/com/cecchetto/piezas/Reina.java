@@ -8,7 +8,10 @@ import java.util.ArrayList;
 
 public class Reina extends Pieza{
 
-    private static final int[][] movimientosReina = {    };
+    private static final int[][] movimientosReina = {
+            {0, 1}, {0, -1}, {1, 0}, {-1, 0},
+            {1, 1}, {-1, 1}, {1, -1}, {-1, -1}
+    };
 
     public Reina(Color color) {
         super(movimientosReina);
@@ -25,10 +28,6 @@ public class Reina extends Pieza{
 
     @Override
     public ArrayList<Point> getPuntosPosibles(Point punto) {
-        ArrayList<Point> puntos = new ArrayList<>();
-
-
-
-        return puntos;
+        return mover(punto);
     }
 }

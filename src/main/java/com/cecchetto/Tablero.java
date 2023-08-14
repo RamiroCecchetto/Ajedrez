@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Tablero extends JPanel{
     static int width = 8, height = 8;
     public static Casilla[][] tablero;
-    ArrayList<Pieza> piezas;
+    public static Boolean dibujado = false;
     public Tablero() {
         this.setLayout(new GridLayout(width, height));
         tablero = new Casilla[width][height];
@@ -34,11 +34,12 @@ public class Tablero extends JPanel{
         if (puntos.isEmpty())
             return;
 
-        Color colorPieza = tablero[puntos.get(0).x][puntos.get(0).y].getPiza().getColor();
+        for (Point punto : puntos)
+            if (!tablero[punto.x][punto.y].isPieza())
+                tablero[punto.x][punto.y].getButton().setBorder(BorderFactory.createLineBorder(java.awt.Color.YELLOW, 4));
+            else
+                tablero[punto.x][punto.y].getButton().setBorder(BorderFactory.createLineBorder(java.awt.Color.RED, 4));
 
-        for (Point punto : puntos) {
-            tablero[punto.x][punto.y].getButton().setBorder(BorderFactory.createLineBorder(java.awt.Color.YELLOW, 4));
-        }
 
     }
 
@@ -67,8 +68,8 @@ public class Tablero extends JPanel{
         tablero[1][6].setPieza(new Peon(Color.negra));     tablero[0][6].setPieza(new Caballo(Color.negra));
         tablero[1][7].setPieza(new Peon(Color.negra));     tablero[0][7].setPieza(new Torre(Color.negra));
 
-        tablero[5][2].setPieza(new Torre(Color.blanca));
-        tablero[4][2].setPieza(new Torre(Color.negra));
+        tablero[4][5].setPieza(new Rey(Color.blanca));
+        tablero[4][4].setPieza(new Caballo(Color.negra));
         tablero[3][5].setPieza(new Torre(Color.blanca));
 
     }

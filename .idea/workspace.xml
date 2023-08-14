@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334131c3-08b2-4684-bfa3-94fec3318159" name="Changes" comment="Se sacaron las logicas porque no estaban del todo bien">
+    <list default="true" id="334131c3-08b2-4684-bfa3-94fec3318159" name="Changes" comment="Las logicas de el caballo, el alfil y la torre andan bien">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/Tablero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Alfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Alfil.java" afterDir="false" />
@@ -13,7 +13,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Pieza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Pieza.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Reina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Reina.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Rey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Rey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Torre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cecchetto/piezas/Torre.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +175,7 @@
     <MESSAGE value="Se implementa el fucionamiento de la torre" />
     <MESSAGE value="Logica de la torre mejorada" />
     <MESSAGE value="Se sacaron las logicas porque no estaban del todo bien" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se sacaron las logicas porque no estaban del todo bien" />
+    <MESSAGE value="Las logicas de el caballo, el alfil y la torre andan bien" />
+    <option name="LAST_COMMIT_MESSAGE" value="Las logicas de el caballo, el alfil y la torre andan bien" />
   </component>
 </project>

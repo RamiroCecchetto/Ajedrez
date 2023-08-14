@@ -24,8 +24,10 @@ public class Casilla{
         casilla.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (pieza != null)
+                if (pieza != null) {
                     Tablero.marcarPuntosPosibles(pieza.getPuntosPosibles(punto));
+                    Tablero.dibujado = false;
+                }
             }
         });
 

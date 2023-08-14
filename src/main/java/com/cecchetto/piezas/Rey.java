@@ -9,8 +9,6 @@ import java.util.ArrayList;
 
 public class Rey extends Pieza{
 
-    private static final int[][] movimientosRey = {    };
-
     public Rey(Color color) {
         super(movimientosRey);
         this.color = color;
@@ -25,11 +23,27 @@ public class Rey extends Pieza{
 
     }
 
+    private static final int[][] movimientosRey = {
+            {0, 1}, {0, -1}, {1, 0}, {-1, 0},
+            {1, 1}, {-1, 1}, {1, -1}, {-1, -1}
+    };
+
     @Override
     public ArrayList<Point> getPuntosPosibles(Point punto) {
         ArrayList<Point> puntos = new ArrayList<>();
 
+        for (int [] movimiento : movimientosRey) {
+            int x = punto.x + movimiento[0];
+            int y = punto.y + movimiento[1];
 
+            if (Tablero.tablero[x][y].isPieza() && !Tablero.tablero[x][y].getPieza().getColor().equals(color))
+                puntos.add(new Point(x, y));
+
+            if (!Tablero.tablero[x][y].isPieza())
+                puntos.add(new Point(x, y));
+
+
+        }
 
         return puntos;
     }

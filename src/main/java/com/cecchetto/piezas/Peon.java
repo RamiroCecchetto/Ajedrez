@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 public class Peon extends Pieza{
 
-    private static final int[][] movimientosPeon = {  };
 
     public Peon(Color color) {
         super(movimientosPeon);
@@ -27,9 +26,28 @@ public class Peon extends Pieza{
 
     }
 
+    private static final int[][] movimientosPeon = {  };
     @Override
     public ArrayList<Point> getPuntosPosibles(Point punto) {
         ArrayList<Point> puntos = new ArrayList<>();
+
+        int posicion = (color.equals(Color.blanca)) ? 6 : 1;
+        int direccion = (color.equals(Color.blanca)) ? -1 : 1;
+
+        if (!Tablero.tablero[punto.x+direccion][punto.y].isPieza()) {
+            puntos.add(new Point(punto.x+direccion, punto.y));
+            if (punto.x == posicion && !Tablero.tablero[punto.x+(direccion*2)][punto.y].isPieza())
+                puntos.add(new Point(punto.x+(direccion*2), punto.y));
+        }
+
+        //Los peones que estan en lso extremos tiran exepciones
+
+
+            if (Tablero.tablero[punto.x+direccion][punto.y+direccion].isPieza() && !Tablero.tablero[punto.x+direccion][punto.y+direccion].getPieza().getColor().equals(color))
+                puntos.add(new Point(punto.x+direccion, punto.y+direccion));
+
+            if (Tablero.tablero[punto.x+direccion][punto.y-direccion].isPieza() && !Tablero.tablero[punto.x+direccion][punto.y-direccion].getPieza().getColor().equals(color))
+                puntos.add(new Point(punto.x+direccion, punto.y-direccion));
 
 
 

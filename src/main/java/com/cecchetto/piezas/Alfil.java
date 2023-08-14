@@ -8,7 +8,9 @@ import java.util.ArrayList;
 
 public class Alfil extends Pieza{
 
-    private static final int[][] movimientosAlfil = {   };
+    private static final int[][] movimientosAlfil = {
+            {1, 1}, {-1, -1}, {-1, 1}, {1, -1}
+    };
 
     public Alfil(Color color) {
         super(movimientosAlfil);
@@ -26,11 +28,7 @@ public class Alfil extends Pieza{
 
     @Override
     public ArrayList<Point> getPuntosPosibles(Point punto) {
-        ArrayList<Point> puntos = new ArrayList<>();
-
-
-
-        return puntos;
+        return mover(punto);
     }
 
 

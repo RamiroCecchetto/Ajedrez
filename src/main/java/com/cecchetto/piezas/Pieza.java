@@ -15,8 +15,10 @@ public abstract class Pieza {
     public abstract ArrayList<Point> getPuntosPosibles(Point punto);
 
     public Pieza(int[][] movimientos) {
+
         this.movimientos = movimientos;
     }
+
     public Color getColor() {
         return color;
     }
@@ -37,7 +39,6 @@ public abstract class Pieza {
                     puntos.add(new Point(x, y));
                     break;
                 } else {
-                    // La casilla tiene una pieza del mismo color, no se puede mover aquí
                     break;
                 }
 
