@@ -12,6 +12,7 @@ public class Tablero extends JPanel{
     static int width = 8, height = 8;
     public static Casilla[][] tablero;
     public static Boolean dibujado = false;
+
     public Tablero() {
         this.setLayout(new GridLayout(width, height));
         tablero = new Casilla[width][height];
@@ -31,29 +32,33 @@ public class Tablero extends JPanel{
     }
 
     public static void moverPieza(Point llegada) {
-        outerLoop:
-        for (int x=0 ; x<width ; x++) {
-            for (int y=0 ; y<height ; y++){
 
-                if (tablero[x][y].isPieza() && tablero[x][y].getPieza().isSeleccionada()) {
-                    Pieza piezaAux = tablero[x][y].getPieza();    //mover una pieza de una casilla a la otra
-                    tablero[x][y].removePieza();
-                    tablero[llegada.x][llegada.y].setPieza(piezaAux);
-                    piezaAux.setSeleccionada(false);
-                    break outerLoop;
-                }
+        tablero[llegada.x][llegada.y].setPieza(casillaMarcada.getPieza());
+        tablero[casillaMarcada.punto.x][casillaMarcada.punto.y].removePieza();
+        casillaMarcada = null;
 
-            }
-        }
         limpiarTablero();
         dibujado = false;
+
+    }
+
+    static Casilla casillaMarcada;
+    public static void setPiezaMarcada(Casilla casilla) {
+        casillaMarcada = casilla;
+    }
+
+    public static Casilla getCasillaMarcada() {
+        return casillaMarcada;
     }
 
     public static void limpiarTablero() {
-        for (int x=0 ; x<width ; x++)
-            for (int y=0 ; y<height ; y++)
-                tablero[x][y].limpiarCasilla();
+
+        for (Casilla[] casillas : tablero)
+            for (Casilla casilla : casillas)
+                casilla.limpiarCasilla();
+
         dibujado = false;
+        casillaMarcada = null;
     }
 
     public static void marcarPuntosPosibles(ArrayList<Point> puntos) {
@@ -63,10 +68,8 @@ public class Tablero extends JPanel{
         dibujado = true;
 
         for (Point punto : puntos)
-            if (!tablero[punto.x][punto.y].isPieza())
                 tablero[punto.x][punto.y].marcarCasilla();
-            else
-                tablero[punto.x][punto.y].marcarCasilla();
+
     }
 
     public static boolean isInRange(Point punto) {

@@ -13,8 +13,8 @@ public class Casilla{
     JButton casilla;
     com.cecchetto.piezas.Color color;
     Pieza pieza;
-    Point punto;
-    Boolean seleccionada = false;
+    public Point punto;
+    Boolean casillaMarcada = false;
 
     public Casilla(Point punto) {
         this.punto = punto;
@@ -27,15 +27,22 @@ public class Casilla{
 
     private void action() {
 
-        if (Tablero.isDibujado() && pieza==null && seleccionada) {
+        if (Tablero.getCasillaMarcada() == this) {
+            Tablero.limpiarTablero();
+            return;
+        }
+
+        if (Tablero.isDibujado() && pieza==null && casillaMarcada) {
             Tablero.moverPieza(punto);
+            casillaMarcada = false;
         }
         else {
             if (pieza != null) {
                 Tablero.marcarPuntosPosibles(pieza.getPuntosPosibles(punto));
-                pieza.setSeleccionada(true);
+                Tablero.setPiezaMarcada(this);
             }
         }
+
     }
 
     public void limpiarCasilla() {
@@ -43,7 +50,7 @@ public class Casilla{
     }
 
     public void marcarCasilla() {
-        seleccionada = true;
+        casillaMarcada = true;
 
         if (pieza == null)
             casilla.setBorder(BorderFactory.createLineBorder(java.awt.Color.YELLOW, 4));

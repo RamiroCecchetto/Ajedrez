@@ -52,14 +52,6 @@ public abstract class Pieza {
         return puntos;
     }
 
-    public Boolean isSeleccionada() {
-        return seleccionada;
-    }
-
-    public void setSeleccionada(Boolean bool) {
-        this.seleccionada = bool;
-    }
-
     public BufferedImage getFoto(Color color) {
         BufferedImage retu = null;
 
