@@ -1,8 +1,10 @@
 package com.cecchetto;
 
-import com.cecchetto.piezas.Peon;
+
+import com.cecchetto.piezas.Color;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class Ajedrez extends JFrame {
 
@@ -18,6 +20,13 @@ public class Ajedrez extends JFrame {
         this.pack();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
+
+        while (Tablero.reyes.size() == 2) {
+
+
+
+        }
+
     }
 
 }

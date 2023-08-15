@@ -4,9 +4,7 @@ import com.cecchetto.piezas.Pieza;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import com.cecchetto.piezas.Color;
 
 public class Casilla{
 
@@ -27,22 +25,36 @@ public class Casilla{
 
     private void action() {
 
+
         if (Tablero.getCasillaMarcada() == this) {
             Tablero.limpiarTablero();
             return;
         }
 
-        if (Tablero.isDibujado() && pieza==null && casillaMarcada) {
-            Tablero.moverPieza(punto);
-            casillaMarcada = false;
-        }
-        else {
-            if (pieza != null) {
-                Tablero.marcarPuntosPosibles(pieza.getPuntosPosibles(punto));
-                Tablero.setPiezaMarcada(this);
-            }
+        if (pieza != null && pieza.getColor().equals(turno)) {
+            Tablero.limpiarTablero();
+            Tablero.marcarPuntosPosibles(pieza.getPuntosPosibles(punto));
+            Tablero.setPiezaMarcada(this);
         }
 
+
+        if (Tablero.isDibujado() && casillaMarcada) {
+
+            if (pieza != null && !pieza.getColor().equals(turno))
+                Tablero.eliminarPieza(this);
+
+            Tablero.moverPieza(punto);
+            casillaMarcada = false;
+
+
+        }
+
+
+    }
+
+    Color turno;
+    public void setTurno(Color turno) {
+        this.turno = turno;
     }
 
     public void limpiarCasilla() {
@@ -76,10 +88,10 @@ public class Casilla{
         this.color = color;
         casilla.setIcon(null);
 
-        if (color == com.cecchetto.piezas.Color.blanca)
-            casilla.setBackground(Color.WHITE);
+        if (color.equals(Color.blanca))
+            casilla.setBackground(java.awt.Color.WHITE);
         else
-            casilla.setBackground(Color.BLACK);
+            casilla.setBackground(java.awt.Color.BLACK);
     }
 
     public Boolean isPieza() {

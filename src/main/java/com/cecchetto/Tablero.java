@@ -12,10 +12,12 @@ public class Tablero extends JPanel{
     static int width = 8, height = 8;
     public static Casilla[][] tablero;
     public static Boolean dibujado = false;
+    public static ArrayList<Pieza> reyes;
 
     public Tablero() {
         this.setLayout(new GridLayout(width, height));
         tablero = new Casilla[width][height];
+        reyes = new ArrayList<>();
 
         for (int x=0 ; x<width ; x++) {
             for (int y=0 ; y<height ; y++) {
@@ -29,6 +31,10 @@ public class Tablero extends JPanel{
                 this.add(tablero[x][y].getButton());
             }
         }
+
+        reyes.add(new Rey(Color.blanca));
+        reyes.add(new Rey(Color.negra));
+
     }
 
     public static void moverPieza(Point llegada) {
@@ -40,6 +46,17 @@ public class Tablero extends JPanel{
         limpiarTablero();
         dibujado = false;
 
+    }
+
+    public void setTurno(Color turno) {
+        for (Casilla[] casillas : tablero)
+            for (Casilla casilla : casillas)
+                casilla.setTurno(turno);
+
+    }
+
+    public static void eliminarPieza(Casilla casilla) {
+        tablero[casilla.punto.x][casilla.punto.y].removePieza();
     }
 
     static Casilla casillaMarcada;
@@ -80,14 +97,13 @@ public class Tablero extends JPanel{
         return dibujado;
     }
 
-//    public  static void setDibujado()
 
     public void addPiezas() {
         tablero[6][0].setPieza(new Peon(Color.blanca));     tablero[7][0].setPieza(new Torre(Color.blanca));
         tablero[6][1].setPieza(new Peon(Color.blanca));     tablero[7][1].setPieza(new Caballo(Color.blanca));
         tablero[6][2].setPieza(new Peon(Color.blanca));     tablero[7][2].setPieza(new Alfil(Color.blanca));
         tablero[6][3].setPieza(new Peon(Color.blanca));     tablero[7][3].setPieza(new Reina(Color.blanca));
-        tablero[6][4].setPieza(new Peon(Color.blanca));     tablero[7][4].setPieza(new Rey(Color.blanca));
+        tablero[6][4].setPieza(new Peon(Color.blanca));     tablero[7][4].setPieza(reyes.get(0));
         tablero[6][5].setPieza(new Peon(Color.blanca));     tablero[7][5].setPieza(new Alfil(Color.blanca));
         tablero[6][6].setPieza(new Peon(Color.blanca));     tablero[7][6].setPieza(new Caballo(Color.blanca));
         tablero[6][7].setPieza(new Peon(Color.blanca));     tablero[7][7].setPieza(new Torre(Color.blanca));
@@ -95,15 +111,15 @@ public class Tablero extends JPanel{
         tablero[1][0].setPieza(new Peon(Color.negra));     tablero[0][0].setPieza(new Torre(Color.negra));
         tablero[1][1].setPieza(new Peon(Color.negra));     tablero[0][1].setPieza(new Caballo(Color.negra));
         tablero[1][2].setPieza(new Peon(Color.negra));     tablero[0][2].setPieza(new Alfil(Color.negra));
-        tablero[1][3].setPieza(new Peon(Color.negra));     tablero[0][3].setPieza(new Rey(Color.negra));
+        tablero[1][3].setPieza(new Peon(Color.negra));     tablero[0][3].setPieza(reyes.get(1));
         tablero[1][4].setPieza(new Peon(Color.negra));     tablero[0][4].setPieza(new Reina(Color.negra));
         tablero[1][5].setPieza(new Peon(Color.negra));     tablero[0][5].setPieza(new Alfil(Color.negra));
         tablero[1][6].setPieza(new Peon(Color.negra));     tablero[0][6].setPieza(new Caballo(Color.negra));
         tablero[1][7].setPieza(new Peon(Color.negra));     tablero[0][7].setPieza(new Torre(Color.negra));
 
-        tablero[4][5].setPieza(new Rey(Color.blanca));
-        tablero[4][4].setPieza(new Caballo(Color.negra));
-        tablero[3][5].setPieza(new Torre(Color.blanca));
+//        tablero[4][5].setPieza(new Rey(Color.blanca));
+//        tablero[4][4].setPieza(new Caballo(Color.negra));
+//        tablero[3][5].setPieza(new Torre(Color.blanca));
 
     }
 
