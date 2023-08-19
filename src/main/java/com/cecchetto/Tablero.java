@@ -21,12 +21,11 @@ public class Tablero extends JPanel{
 
         for (int x=0 ; x<width ; x++) {
             for (int y=0 ; y<height ; y++) {
-                tablero[x][y] = new Casilla(new Point(x, y));
 
                 if ((x+y)%2 == 0)
-                    tablero[x][y].setColor(Color.blanca);
+                    tablero[x][y] = new Casilla(new Point(x, y), Color.blanca);
                 else
-                    tablero[x][y].setColor(Color.negra);
+                    tablero[x][y] = new Casilla(new Point(x, y), Color.negra);
 
                 this.add(tablero[x][y].getButton());
             }

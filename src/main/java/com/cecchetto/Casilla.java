@@ -14,11 +14,15 @@ public class Casilla{
     public Point punto;
     Boolean casillaMarcada = false;
 
-    public Casilla(Point punto) {
+    public Casilla(Point punto, Color color) {
         this.punto = punto;
+        this.color = color;
+
         casilla = new JButton();
         casilla.setPreferredSize(new Dimension(55, 55));
         casilla.setBorder(BorderFactory.createLineBorder(java.awt.Color.BLACK));
+
+        casilla.setBackground( color.equals(Color.blanca) ? java.awt.Color.WHITE : java.awt.Color.BLACK );
 
         casilla.addActionListener( e -> action());
     }
@@ -45,8 +49,6 @@ public class Casilla{
 
             Tablero.moverPieza(punto);
             casillaMarcada = false;
-
-
         }
 
 
@@ -72,7 +74,8 @@ public class Casilla{
 
     public void removePieza() {
         pieza = null;
-        setColor(color);
+        casilla.setIcon(null);
+        casilla.setBackground( color.equals(Color.blanca) ? java.awt.Color.WHITE : java.awt.Color.BLACK );
     }
 
     public void setPieza(Pieza pieza) {
@@ -82,16 +85,6 @@ public class Casilla{
 
     public Pieza getPieza() {
         return pieza;
-    }
-
-    public void setColor(com.cecchetto.piezas.Color color) {
-        this.color = color;
-        casilla.setIcon(null);
-
-        if (color.equals(Color.blanca))
-            casilla.setBackground(java.awt.Color.WHITE);
-        else
-            casilla.setBackground(java.awt.Color.BLACK);
     }
 
     public Boolean isPieza() {
